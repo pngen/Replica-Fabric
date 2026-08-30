@@ -77,7 +77,11 @@ if(RF_ENABLE_CUDA)
       set_target_properties(replicafabric_cuda PROPERTIES
         CUDA_ARCHITECTURES 120
         CUDA_STANDARD 17)
-      target_compile_options(replicafabric_cuda PRIVATE ${RF_COMPILE_WARNINGS})
+      if(MSVC)
+        target_compile_options(replicafabric_cuda PRIVATE -Xcompiler=/W4,-WX,-wd4211)
+      else()
+        target_compile_options(replicafabric_cuda PRIVATE -Xcompiler=-Wall,-Wextra,-Werror)
+      endif()
       target_link_libraries(replicafabric_cuda PUBLIC CUDA::cudart)
       target_compile_definitions(replicafabric_cuda PUBLIC REPLICAFABRIC_HAS_CUDA=1)
       target_link_libraries(replicafabric PUBLIC replicafabric_cuda CUDA::cudart)

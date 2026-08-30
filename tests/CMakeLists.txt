@@ -25,3 +25,4 @@ rf_add_test_module(unit_tests
 )
 # --- multiprocess ---------------------------------------------------------
 add_subdirectory(multiprocess)
+add_subdirectory(cuda)

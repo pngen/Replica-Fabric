@@ -1,0 +1,8 @@
+add_executable(rf_cuda_demo cuda_demo.cpp)
+target_link_libraries(rf_cuda_demo PRIVATE replicafabric)
+rf_configure_target(rf_cuda_demo)
+if(RF_CUDA_FOUND)
+  target_compile_definitions(rf_cuda_demo PRIVATE REPLICAFABRIC_HAS_CUDA=1)
+  target_link_libraries(rf_cuda_demo PRIVATE CUDA::cudart)
+endif()
+add_test(NAME cuda_demo COMMAND rf_cuda_demo)
