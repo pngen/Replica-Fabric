@@ -1,0 +1,32 @@
+# Build output
+build/
+build-*/
+cmake-build-*/
+out/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+*.cmake.user
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Binaries
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.obj
+*.lib
+
+# CUDA build artifacts
+*.cubin
+*.fatbin
+
+# Python / misc
+__pycache__/
+*.pyc
