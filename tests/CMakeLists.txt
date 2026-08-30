@@ -21,4 +21,5 @@ rf_add_test_module(unit_tests
   unit/test_core.cpp
   unit/test_framework.cpp
   unit/test_controller.cpp
+  unit/test_persistence.cpp
 )

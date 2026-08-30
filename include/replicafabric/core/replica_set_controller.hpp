@@ -197,7 +197,14 @@ public:
 
   // For persistence: access the mutable working state (single-threaded use).
   std::map<ReplicaSetId, ReplicaSetState>& sets() { return sets_; }
+  const std::map<ReplicaSetId, ReplicaSetState>& sets() const { return sets_; }
   std::map<ReplicaId, ReplicaState>& replicas() { return replicas_; }
+  const std::map<ReplicaId, ReplicaState>& replicas() const { return replicas_; }
+  std::map<WorkerId, WorkerRegistration>& workers() { return workers_; }
+  const std::map<WorkerId, WorkerRegistration>& workers() const { return workers_; }
+  std::vector<PromotionRecord>& promotions_mut() { return promotions_; }
+  std::vector<DrainRecord>& drains_mut() { return drains_; }
+  std::vector<FailoverRecord>& failovers_mut() { return failovers_; }
 
   // Resolve the current worker boot for a replica's worker (for gate context).
   WorkerBootId current_boot_for(const ReplicaId& replica_id) const;
