@@ -23,3 +23,5 @@ rf_add_test_module(unit_tests
   unit/test_controller.cpp
   unit/test_persistence.cpp
 )
+# --- multiprocess ---------------------------------------------------------
+add_subdirectory(multiprocess)

@@ -45,6 +45,9 @@ target_include_directories(replicafabric PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<INSTALL_INTERFACE:include>")
 target_compile_features(replicafabric PUBLIC cxx_std_20)
+if(WIN32)
+  target_link_libraries(replicafabric PUBLIC ws2_32)
+endif()
 target_compile_options(replicafabric PRIVATE ${RF_COMPILE_WARNINGS})
 target_compile_definitions(replicafabric PUBLIC REPLICAFABRIC_VERSION="${PROJECT_VERSION}")
 
@@ -91,6 +94,8 @@ function(rf_configure_target tgt)
     target_compile_definitions(${tgt} PRIVATE _CRT_SECURE_NO_WARNINGS=1)
   endif()
 endfunction()
+
+add_subdirectory(apps/distributed)
 
 if(RF_BUILD_TESTS)
   enable_testing()
