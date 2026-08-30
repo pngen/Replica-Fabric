@@ -1,8 +1,10 @@
 # Build output
-build/
-build-*/
-cmake-build-*/
-out/
+/build/
+/build-*/
+/install/
+/cmake-build-*/
+/out/
+/tools/consumer/build/
 
 # CMake
 CMakeCache.txt
@@ -27,6 +29,6 @@ CMakeFiles/
 *.cubin
 *.fatbin
 
-# Python / misc
+# Misc
 __pycache__/
 *.pyc

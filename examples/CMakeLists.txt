@@ -5,3 +5,13 @@ if(RF_CUDA_FOUND)
   rf_configure_target(rf_cuda_demo)
   add_test(NAME cuda_demo COMMAND rf_cuda_demo)
 endif()
+
+add_executable(rf_example_basic basic.cpp)
+target_link_libraries(rf_example_basic PRIVATE replicafabric)
+rf_configure_target(rf_example_basic)
+add_test(NAME example_basic COMMAND rf_example_basic)
+
+add_executable(rf_example_failover failover.cpp)
+target_link_libraries(rf_example_failover PRIVATE replicafabric)
+rf_configure_target(rf_example_failover)
+add_test(NAME example_failover COMMAND rf_example_failover)
