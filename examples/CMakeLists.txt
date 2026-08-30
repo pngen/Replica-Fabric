@@ -15,3 +15,13 @@ add_executable(rf_example_failover failover.cpp)
 target_link_libraries(rf_example_failover PRIVATE replicafabric)
 rf_configure_target(rf_example_failover)
 add_test(NAME example_failover COMMAND rf_example_failover)
+
+add_executable(rf_example_warm_promote warm_promote.cpp)
+target_link_libraries(rf_example_warm_promote PRIVATE replicafabric)
+rf_configure_target(rf_example_warm_promote)
+add_test(NAME example_warm_promote COMMAND rf_example_warm_promote)
+
+add_executable(rf_example_drain drain.cpp)
+target_link_libraries(rf_example_drain PRIVATE replicafabric)
+rf_configure_target(rf_example_drain)
+add_test(NAME example_drain COMMAND rf_example_drain)

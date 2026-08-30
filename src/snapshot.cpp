@@ -478,7 +478,6 @@ void install_recovered_state(const RecoveredState& state, ReplicaSetController& 
     r2.health_record.state = HealthState::STARTING;
     r2.readiness = ReadinessState::UNKNOWN;
     r2.warmth = WarmthState::COLD;
-    r2.lifecycle = ReplicaLifecycle::DECLARED;
     r2.promotion = PromotionState::NOT_PROMOTED;
     r2.role = ReplicaRole::NONE;
     r2.active_requests = 0;

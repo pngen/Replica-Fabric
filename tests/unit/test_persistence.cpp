@@ -110,7 +110,10 @@ RF_TEST_CASE(snapshot_round_trip) {
       RF_REQUIRE(r != nullptr);
       RF_CHECK(!r->serving_eligible);
       RF_CHECK(r->boot_id.is_null());
-      RF_CHECK(r->lifecycle == ReplicaLifecycle::DECLARED);
+      // Lifecycle is preserved (no forced DECLARED), but serving authority is
+      // never resurrected: serving_eligible is false, boot is forgotten,
+      // health is STARTING, and the authority gate must reject it.
+      RF_CHECK(r->health == HealthState::STARTING);
       RF_CHECK(!c2.servable(rid).eligible);
     }
   }
