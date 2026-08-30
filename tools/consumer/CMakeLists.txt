@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.24)
+project(rf_consumer CXX)
+set(CMAKE_CXX_STANDARD 20)
+find_package(ReplicaFabric CONFIG REQUIRED)
+add_executable(rf_consumer main.cpp)
+target_link_libraries(rf_consumer PRIVATE replicafabric::replicafabric)
+target_compile_options(rf_consumer PRIVATE /W4 /WX)
