@@ -168,10 +168,8 @@ A downstream consumer uses `find_package(ReplicaFabric CONFIG REQUIRED)` and lin
 ## Tests & benchmarks
 
 The suite covers unit, property (fixed-seed), concurrency, adversarial,
-persistence/corruption, real multiprocess, and CUDA validation. No test timeout
-mechanism exists anywhere - no `timeoutMs`, no `TIMEOUT` properties, no
-watchdogs, no process time limits. Tests run to natural completion, failure,
-crash, or manual termination after diagnosing a genuine hang. Benchmarks measure
+persistence/corruption, real multiprocess, and CUDA validation, and runs each
+test to completion. Benchmarks measure
 completion throughput for creation, transitions, health/readiness updates,
 placement, promotion, failover, drain bookkeeping, snapshot persistence &
 recovery, and multi-threaded / large-pool mutation.
