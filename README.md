@@ -185,4 +185,4 @@ runs over real TCP with real OS processes.
 
 ## License
 
-Apache License 2.0. Copyright 2026 Summon Software Labs.
+Apache License 2.0. Copyright 2026 Summon Software Labs. No telemetry transmission.
